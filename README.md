@@ -17,3 +17,10 @@ sudo chmod +x install-xmrig.sh
 ```bash
 ./install-xmrig.sh
 ```
+```bash
+cd xmrig/build
+```
+```bash
+nano config.json
+```
+### Now edit the lines in the cpu header 
