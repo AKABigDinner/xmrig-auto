@@ -30,16 +30,23 @@ else
     echo "xmrig directory already exists, skipping clone."
 fi
 
-cd xmrig
+cd xmrig || { echo "Failed to change directory to xmrig"; exit 1; }
 
 if [ ! -d "build" ]; then
     mkdir build
 fi
 
-cd build
+cd build || { echo "Failed to change directory to build"; exit 1; }
 
 echo "Running cmake and make to build xmrig..."
 cmake ..
 make
+
+# Ensure the config.json file exists before copying
+if [ -f "../src/config.json" ]; then
+    cp ../src/config.json .
+else
+    echo "config.json not found, skipping copy."
+fi
 
 echo "xmrig build completed."
