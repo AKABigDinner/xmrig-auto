@@ -14,3 +14,6 @@ cd xmrig-auto
 ```bash
 sudo chmod +x install-xmrig.sh
 ```
+```bash
+./install-xmrig.sh
+```
